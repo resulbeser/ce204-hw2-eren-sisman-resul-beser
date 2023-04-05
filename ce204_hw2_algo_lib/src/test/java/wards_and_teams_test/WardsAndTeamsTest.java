@@ -3,13 +3,7 @@ package wards_and_teams_test;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-import organization.Address;
-import organization.Department;
-import organization.FullName;
-import organization.Gender;
-import organization.History;
-import organization.Hospital;
-import organization.Phone;
+
 import wards_and_teams.*;
 
 public class WardsAndTeamsTest {

@@ -5,7 +5,7 @@ package organization;
 import java.util.*;
 import java.sql.Date;
 
-// line 73 "../organization.ump"
+// line 73 "../umple_project.ump"
 public class Department
 {
 
@@ -51,13 +51,26 @@ public class Department
     List<Staff> newStaffs = Collections.unmodifiableList(staffs);
     return newStaffs;
   }
-
+  /**
+   * @brief Returns the number of staffs.
+   *
+   * This method returns the current number of staffs in the staffs list.
+   *
+   * @return The number of staffs as an integer.
+   */
   public int numberOfStaffs()
   {
     int number = staffs.size();
     return number;
   }
-
+  /**
+   * @brief Checks if the administrative staffs list is not empty.
+   * 
+   * This method checks if the list of administrative staffs has at least one element.
+   * 
+   * @return true if the list has at least one staff, false otherwise.
+   */
+  
   public boolean hasStaffs()
   {
     boolean has = staffs.size() > 0;
@@ -70,6 +83,22 @@ public class Department
     return index;
   }
   /* Code from template association_SetOneToMany */
+  /**
+   * @brief Sets the Hospital object associated with this Department.
+   * 
+   * This method sets the Hospital object associated with this Department.  
+   *
+   * 
+   * @param aHospital The Hospital object to be set as the associated Hospital.
+   * @return true if the Hospital object was set successfully, false if the provided Hospital object is null.
+   * 
+   * @see Hospital
+   * @see hospital
+   * @see Hospital#addDepartment(Department)
+   * @see Hospital#removeDepartment(Department)
+   * @see Department#equals(Object)
+   * 
+   */
   public boolean setHospital(Hospital aHospital)
   {
     boolean wasSet = false;
@@ -95,7 +124,22 @@ public class Department
   }
   /* Code from template association_AddManyToOne */
 
-
+  /**
+   * @brief Adds a Staff object to the staffs list of the Department.
+   * 
+   * This method adds the specified Staff object to the staffs list of the Department. 
+   * 
+   * @param aStaff The Staff object to be added to the staffs list.
+   * @return true if the Staff object was added successfully, false if it already exists in the list.
+   * 
+   * @see Staff
+   * @see staffs
+   * @see Department#equals(Object)
+   * @see Staff#getDepartment()
+   * @see Staff#setDepartment(Department)
+   * 
+   **/
+  
   public boolean addStaff(Staff aStaff)
   {
     boolean wasAdded = false;
@@ -113,7 +157,23 @@ public class Department
     wasAdded = true;
     return wasAdded;
   }
-
+  
+  /**
+   * @brief Removes a Staff object from the staffs list of the Department.
+   * 
+   * This method removes the specified Staff object from the staffs list of the Department, if and only
+   * if the Department associated with the Staff object is not equal to this Department object. In other
+   * words, a Staff object can only be removed if it currently belongs to a different Department.
+   * 
+   * @param aStaff The Staff object to be removed from the staffs list.
+   * @return true if the Staff object was removed successfully, false otherwise.
+   * 
+   * @see Staff
+   * @see staffs
+   * @see Department#equals(Object)
+   * @see Staff#getDepartment()
+   **/
+  
   public boolean removeStaff(Staff aStaff)
   {
     boolean wasRemoved = false;
@@ -139,7 +199,20 @@ public class Department
     }
     return wasAdded;
   }
-
+  /**
+   * @brief Adds or moves a Staff object at the specified index in the staffs list.
+   * 
+   * This method either adds a new Staff object at the specified index in the staffs list, or moves
+   * an existing Staff object to the specified index. 
+   * 
+   * @param aStaff The Staff object to be added or moved.
+   * @param index The index where the Staff object should be added or moved.
+   * @return true if the Staff object was added or moved successfully, false otherwise.
+   * 
+   * @see Staff
+   * @see staffs
+   */
+  
   public boolean addOrMoveStaffAt(Staff aStaff, int index)
   {
     boolean wasAdded = false;
@@ -157,7 +230,18 @@ public class Department
     }
     return wasAdded;
   }
-
+  
+  /**
+   * @brief Deletes the Department object and associated staff.
+   * 
+   * This method sets the associated hospital to null, removes the department from the hospital's
+   * list of departments, and deletes all the staff objects associated with this department.
+   * 
+   * @note Caller's responsibility to properly dispose the Department object after calling this method.
+   * 
+   * @see Staff#delete()
+   */
+  
   public void delete()
   {
     Hospital placeholderHospital = hospital;

@@ -51,7 +51,14 @@ public class Patient extends Person
   //------------------------
   // INTERFACE
   //------------------------
-
+  /**
+   * Sets the ID of the object.
+   *
+   * @param newId The new ID to be set.
+   * @return A boolean indicating whether or not the ID was successfully set.
+   *         Returns false if the ID cannot be set due to `canSetId` being false.
+   */
+  
   public boolean setId(String aId)
   {
     boolean wasSet = false;
@@ -61,6 +68,13 @@ public class Patient extends Person
     return wasSet;
   }
 
+  /**
+   * Sets the age of the object.
+   *
+   * @param aAge The new age to be set.
+   * @return A boolean indicating whether or not the age was successfully set.
+   */
+  
   public boolean setAge(int aAge)
   {
     boolean wasSet = false;
@@ -69,13 +83,25 @@ public class Patient extends Person
     return wasSet;
   }
   /* Code from template attribute_SetMany */
+  /**
+   * Adds a prescription to the list of prescriptions.
+   *
+   * @param aPrescription The prescription to be added.
+   * @return A boolean indicating whether or not the prescription was successfully added.
+   */
   public boolean addPrescription(String aPrescription)
   {
     boolean wasAdded = false;
     wasAdded = prescriptions.add(aPrescription);
     return wasAdded;
   }
-
+  /**
+   * Removes a prescription from the list of prescriptions.
+   *
+   * @param aPrescription The prescription to be removed.
+   * @return A boolean indicating whether or not the prescription was successfully removed.
+   */ 
+  
   public boolean removePrescription(String aPrescription)
   {
     boolean wasRemoved = false;
@@ -83,27 +109,59 @@ public class Patient extends Person
     return wasRemoved;
   }
   /* Code from template attribute_SetMany */
+  /**
+   * Removes the specified prescription from the list of prescriptions.
+   *
+   * @param aPrescription The prescription to be removed.
+   * @return A boolean indicating whether or not the prescription was successfully removed.
+   */
   public boolean addAllergy(String aAllergy)
   {
     boolean wasAdded = false;
     wasAdded = allergies.add(aAllergy);
     return wasAdded;
   }
-
+  /**
+   * 
+   * Removes the specified allergy from the list of allergies.
+   * @param aAllergy The allergy to be removed.
+   * @return true if the allergy was successfully removed, false otherwise.
+   * 
+   */
   public boolean removeAllergy(String aAllergy)
   {
     boolean wasRemoved = false;
     wasRemoved = allergies.remove(aAllergy);
     return wasRemoved;
   }
+  
+  
   /* Code from template attribute_SetMany */
+  /**
+   * 
+   * Removes the specified special request from the list of special requests.
+   * @param aSpecialReq The special request to be removed.
+   * @return true if the special request was successfully removed, false otherwise.
+   * 
+   * 
+   */
   public boolean addSpecialReq(String aSpecialReq)
   {
     boolean wasAdded = false;
     wasAdded = specialReqs.add(aSpecialReq);
     return wasAdded;
   }
-
+  
+  
+  /**
+   * 
+   * Adds the specified special request to the list of special requests.
+   * 
+   * @param aSpecialReq The special request to be added.
+   * @return true if the special request was successfully added, false otherwise.
+   * 
+   * 
+   */
   public boolean removeSpecialReq(String aSpecialReq)
   {
     boolean wasRemoved = false;
@@ -111,6 +169,16 @@ public class Patient extends Person
     return wasRemoved;
   }
 
+  /**
+   * 
+   * Adds the specified special request to the list of special requests.
+   * 
+   * @param aSpecialReq The special request to be added.
+   * @return true if the special request was successfully added, false otherwise.
+   * 
+   * 
+   */ 
+  
   public boolean setAccepted(Date aAccepted)
   {
     boolean wasSet = false;
@@ -119,6 +187,16 @@ public class Patient extends Person
     return wasSet;
   }
 
+  /**
+   * 
+   * Adds the specified special request to the list of special requests.
+   * 
+   * @param aSpecialReq The special request to be added.
+   * @return true if the special request was successfully added, false otherwise.
+   * 
+   * 
+   */
+  
   public boolean setSickness(History aSickness)
   {
     boolean wasSet = false;

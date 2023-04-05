@@ -3,7 +3,7 @@
 
 package organization;
 
-// line 29 "../organization.ump"
+// line 29 "../umple_project.ump"
 public class FullName
 {
 
@@ -30,7 +30,14 @@ public class FullName
   //------------------------
   // INTERFACE
   //------------------------
-
+  
+  /**
+   * @brief Sets the given name of an object.
+   *
+   * @param aGivenName The given name to be set.
+   * @return <code>true</code> if the given name was set successfully, <code>false</code> otherwise.
+   */
+  
   public boolean setGivenName(String aGivenName)
   {
     boolean wasSet = false;
@@ -38,7 +45,18 @@ public class FullName
     wasSet = true;
     return wasSet;
   }
-
+  
+  /**
+   * Sets the middle name of the object.
+   *
+   * @param aMiddleName The middle name to be set.
+   * @return True if the middle name was set successfully, false otherwise.
+   *
+   * @post The middle name of the object will be updated with the new value.
+   *
+   * @note This method assumes that the "middleName" field is a valid field in the object.
+   *       
+   */
   public boolean setMiddleName(String aMiddleName)
   {
     boolean wasSet = false;
@@ -46,6 +64,18 @@ public class FullName
     wasSet = true;
     return wasSet;
   }
+  
+  /**
+   * Sets the family name of the object.
+   *
+   * @param aFamilyName The family name to be set.
+   * @return True if the family name was set successfully, false otherwise.
+   *
+   * @post The family name of the object will be updated with the new value.
+   *
+   * @note This method assumes that the "familyName" field is a valid field in the object.
+   *     
+   */
 
   public boolean setFamilyName(String aFamilyName)
   {

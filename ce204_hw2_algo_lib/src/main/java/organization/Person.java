@@ -56,7 +56,13 @@ public abstract class Person
   //------------------------
   // INTERFACE
   //------------------------
-
+  /* Code from template association_AddManyToManyMethod */
+  /**
+   * Adds a Patient to the list of patients associated with this OperationsStaff.
+   * 
+   * @param aPatient The Patient to be added.
+   * @return true if the Patient was added successfully, false otherwise.
+   */
   public boolean setGivenName(String aGivenName)
   {
     boolean wasSet = false;
@@ -64,7 +70,13 @@ public abstract class Person
     wasSet = true;
     return wasSet;
   }
-
+  /* Code from template association_AddManyToManyMethod */
+  /**
+   * Adds a Patient to the list of patients associated with this OperationsStaff.
+   * 
+   * @param aPatient The Patient to be added.
+   * @return true if the Patient was added successfully, false otherwise.
+   */
   public boolean setMiddleName(String aMiddleName)
   {
     boolean wasSet = false;
@@ -80,7 +92,13 @@ public abstract class Person
     wasSet = true;
     return wasSet;
   }
-
+  /* Code from template association_AddManyToManyMethod */
+  /**
+   * Adds a Patient to the list of patients associated with this OperationsStaff.
+   * 
+   * @param aPatient The Patient to be added.
+   * @return true if the Patient was added successfully, false otherwise.
+   */
   public boolean setName(FullName aName)
   {
     boolean wasSet = false;
@@ -88,7 +106,13 @@ public abstract class Person
     wasSet = true;
     return wasSet;
   }
-
+  /* Code from template association_AddManyToManyMethod */
+  /**
+   * Adds a Patient to the list of patients associated with this OperationsStaff.
+   * 
+   * @param aPatient The Patient to be added.
+   * @return true if the Patient was added successfully, false otherwise.
+   */
   public boolean setGender(Gender aGender)
   {
     boolean wasSet = false;
@@ -112,7 +136,13 @@ public abstract class Person
     wasSet = true;
     return wasSet;
   }
-
+  /* Code from template association_AddManyToManyMethod */
+  /**
+   * Adds a Patient to the list of patients associated with this OperationsStaff.
+   * 
+   * @param aPatient The Patient to be added.
+   * @return true if the Patient was added successfully, false otherwise.
+   */
   public boolean setBirthDate(Date aBirthDate)
   {
     boolean wasSet = false;
@@ -128,7 +158,13 @@ public abstract class Person
     wasSet = true;
     return wasSet;
   }
-
+  /* Code from template association_AddManyToManyMethod */
+  /**
+   * Adds a Patient to the list of patients associated with this OperationsStaff.
+   * 
+   * @param aPatient The Patient to be added.
+   * @return true if the Patient was added successfully, false otherwise.
+   */
   public boolean setCityName(String aCityName)
   {
     boolean wasSet = false;
@@ -144,7 +180,13 @@ public abstract class Person
     wasSet = true;
     return wasSet;
   }
-
+  /* Code from template association_AddManyToManyMethod */
+  /**
+   * Adds a Patient to the list of patients associated with this OperationsStaff.
+   * 
+   * @param aPatient The Patient to be added.
+   * @return true if the Patient was added successfully, false otherwise.
+   */
   public boolean setStreetName(String aStreetName)
   {
     boolean wasSet = false;
@@ -152,7 +194,13 @@ public abstract class Person
     wasSet = true;
     return wasSet;
   }
-
+  /* Code from template association_AddManyToManyMethod */
+  /**
+   * Adds a Patient to the list of patients associated with this OperationsStaff.
+   * 
+   * @param aPatient The Patient to be added.
+   * @return true if the Patient was added successfully, false otherwise.
+   */
   public boolean setBuildingName(String aBuildingName)
   {
     boolean wasSet = false;
@@ -261,6 +309,13 @@ public abstract class Person
     return 0;
   }
   /* Code from template association_AddManyToManyMethod */
+  /* Code from template association_AddManyToManyMethod */
+  /**
+   * Adds a Patient to the list of patients associated with this addHospital.
+   * 
+   * @param aPatient The Patient to be added.
+   * @return true if the Patient was added successfully, false otherwise.
+   */
   public boolean addHospital(Hospital aHospital)
   {
     boolean wasAdded = false;

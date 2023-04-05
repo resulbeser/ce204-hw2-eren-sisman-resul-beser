@@ -3,7 +3,7 @@
 
 package organization;
 
-// line 62 "../organization.ump"
+// line 62 "../umple_project.ump"
 public class History
 {
 
@@ -26,7 +26,16 @@ public class History
   //------------------------
   // INTERFACE
   //------------------------
-
+  
+  /**
+   * @brief Sets the value of the "sicknesses" field.
+   *
+   * @param aSicknesses A string representing the sicknesses to be set.
+   * @return True if the value was successfully set, false otherwise.
+   *
+   * @note This method assumes that the "sicknesses" field is a valid field in the object and has corresponding getter and setter methods.
+   *      
+   */
   public boolean setSicknesses(String aSicknesses)
   {
     boolean wasSet = false;
@@ -43,6 +52,16 @@ public class History
   public void delete()
   {}
 
+  /**
+   * 
+   * @brief Returns a string representation of the object, including the value of the "sicknesses" field.
+   *
+   * @return A string representation of the object, including the value of the "sicknesses" field.
+   *
+   * @note This method assumes that the "sicknesses" field is a valid field in the object and has a corresponding getter method.
+   *       
+   *       
+   */
 
   public String toString()
   {

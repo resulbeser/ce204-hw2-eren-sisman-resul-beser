@@ -164,12 +164,34 @@ public class OrganizationTest {
     }
     
     @Test
+    public void Hospital_testGetPhone_2() {
+      Phone phone = new Phone(555555555);
+      Hospital hospital = new Hospital("Acıbadem Hastanesi", phone, "İstanbul", "Kadıköy", "Sahrayıcedit mah.", "No:42");
+      assertEquals(phone, hospital.getPhone());
+    }
+    
+    @Test
+    public void Hospital_testGetPhone_3() {
+      Phone phone = new Phone(2125551212);
+      Hospital hospital = new Hospital("İstanbul Üniversitesi Cerrahpaşa Tıp Fakültesi Hastanesi", phone, "İstanbul", "Fatih", "Cerrahpaşa mah.", "No:1");
+      assertEquals(phone, hospital.getPhone());
+    }
+    
+    @Test
     public void Hospital_testSetPhone_1() {
         Phone phone = new Phone(5678901);
         phone.setPhoneNumber(46259961);
         Hospital hospital = new Hospital("Imperial Hastanesi", phone , "İstanbul", "Beşiktaş", "Barbaros Bulvarı", "No: 1");
         assertEquals(phone,hospital.getPhone());
-
+    }
+    
+    @Test
+    public void Hospital_testSetAddress_3() {
+      Phone phone = new Phone(2125556677);
+      Address address = new Address("İstanbul", "Beyoğlu", "İstiklal", "Caddesi 321");
+      Hospital hospital = new Hospital("Galata Medical Center", phone , "İstanbul", "Beyoğlu", "İstiklal Caddesi", "321");
+      hospital.setAddress(address);
+      assertEquals(address, hospital.getAddress());
     }
     
     @Test
@@ -180,10 +202,33 @@ public class OrganizationTest {
     }
     
     @Test
+    public void Hospital_testGetName_2() {
+      Phone phone = new Phone(2125551212);
+      Hospital hospital = new Hospital("Acıbadem Taksim Hastanesi", phone, "İstanbul", "Beyoğlu", "Cumhuriyet mah.", "No:40");
+      assertEquals("Acıbadem Taksim Hastanesi", hospital.getName());
+    }
+    
+    @Test
+    public void Hospital_testGetName_3() {
+      Phone phone = new Phone(3121212);
+      Hospital hospital = new Hospital("Hacettepe Üniversitesi Tıp Fakültesi Hastanesi", phone, "Ankara", "Sıhhiye", "Sıhhiye Meydanı", "No:1");
+      assertEquals("Hacettepe Üniversitesi Tıp Fakültesi Hastanesi", hospital.getName());
+    }
+    
+    @Test
     public void Hospital_testGetAddress_1() {
       Phone phone = new Phone(53369161);
       Address address = new Address("Trabzon", "Ortahisar", "Hastane Sok.", "No:1");
       Hospital hospital = new Hospital("Farabi Hastanesi", phone, "Trabzon", "Ortahisar", "Hastane sok.", "No:1");
+      hospital.setAddress(address);
+      assertEquals(address, hospital.getAddress());
+    }
+    
+    @Test
+    public void Hospital_testGetAddress_2() {
+      Phone phone = new Phone(55512345);
+      Address address = new Address("Ankara", "Çankaya", "Bahçelievler", "Caddesi 123");
+      Hospital hospital = new Hospital("Ankara City Hospital", phone, "Ankara", "Çankaya", "Bahçelievler Caddesi", "123");
       hospital.setAddress(address);
       assertEquals(address, hospital.getAddress());
     }
@@ -266,6 +311,14 @@ public class OrganizationTest {
     }
     
     @Test
+    public void Hospital_testGetAddress_3() {
+      Phone phone = new Phone(55512345);
+      Address address = new Address("Ankara", "Çankaya", "Bahçelievler", "Caddesi 123");
+      Hospital hospital = new Hospital("Ankara City Hospital", phone, "Ankara", "Çankaya", "Bahçelievler Caddesi", "123");
+      hospital.setAddress(address);
+      assertEquals(address, hospital.getAddress());
+    }
+    @Test
     public void testSetCityName() {
       Address address = new Address("New York", "Manhattan", "5th Ave", "Empire State Building");
       address.setCityName("Los Angeles");
@@ -278,6 +331,13 @@ public class OrganizationTest {
       address.setDistrictName("Brooklyn");
       assertEquals("Brooklyn", address.getDistrictName());
     }
+    
+    @Test
+    public void testSetDistrictName_2() {
+      Address address = new Address("London", "Camden", "Camden High St", "221B");
+      address.setDistrictName("Hackney");
+      assertEquals("Hackney", address.getDistrictName());
+    }
 
     @Test
     public void testSetStreetName() {
@@ -285,7 +345,14 @@ public class OrganizationTest {
       address.setStreetName("Broadway");
       assertEquals("Broadway", address.getStreetName());
     }
-
+    
+    @Test
+    public void testSetStreetName_2() {
+      Address address = new Address("New York", "Manhattan", "5th Ave", "Empire State Building");
+      address.setStreetName("Broadway");
+      assertEquals("Broadway", address.getStreetName());
+    }
+    
     @Test
     public void testSetBuildingName() {
       Address address = new Address("New York", "Manhattan", "5th Ave", "Empire State Building");
@@ -297,6 +364,12 @@ public class OrganizationTest {
     public void testGetCityName() {
       Address address = new Address("New York", "Manhattan", "5th Ave", "Empire State Building");
       assertEquals("New York", address.getCityName());
+    }
+    
+    @Test
+    public void testGetCityName_2() {
+      Address address = new Address("Berlin", "Mitte", "Friedrichstraße", "35");
+      assertEquals("Berlin", address.getCityName());
     }
 
     @Test
