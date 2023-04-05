@@ -1,40 +1,38 @@
 package organization_test;
 
 import static org.junit.Assert.*;
+
+import java.sql.Date;
+
 import org.junit.Test;
-import organization.Address;
-import organization.AdministrativeStaff;
-import organization.Department;
-import organization.Doctor;
-import organization.FrontDeskStaff;
-import organization.FullName;
-import organization.Gender;
-import organization.History;
-import organization.Hospital;
-import organization.Nurse;
-import organization.OperationsStaff;
-import organization.Patient;
-import organization.Person;
-import organization.Phone;
-import organization.Receptionist;
-import organization.Staff;
-import organization.Surgeon;
-import organization.SurgicalTechnologist;
-import organization.TechnicalStaff;
-import organization.Technician;
-import organization.Technologist;
+import organization.*;
+
 
 
 
 public class OrganizationTest {
 
-	@Test
-	public void testSetName() {
-		boolean wasSet = false;
-	    String name = "testName";
-	    wasSet = setName(name);
-	    assertTrue(wasSet);
+	String aName;
+	Phone aPhone;
+	String aCityName; 
+	String aDistrictName; 
+	String aStreetName;
+	String aBuildingName;
 	
-	}
+	String aGivenName,aMiddleName,aFamilyName,aTitle,aBirthDate;
+	Gender aGender;
+	Date aJoined;
+	Department aDepartment;
+	
+    //Hospital obj = new Hospital(aName, aPhone, aCityName, aDistrictName, aStreetName, aBuildingName);
+    
 
+    @Test
+    public void testGetName() {
+    	FullName name = new FullName("Ahmet", "Selami", "ŞAHİN");
+    	assertEquals("Ahmet", name.getGivenName());
+    }
+    
+	
+    //AdministrativeStaff obj2 = new AdministrativeStaff( aGivenName, aMiddleName,  aFamilyName,  aGender,  aPhone,  aTitle,  aBirthDate, aCityName, aDistrictName, aStreetName, aBuildingName,  aJoined,  aDepartment); 
 }
