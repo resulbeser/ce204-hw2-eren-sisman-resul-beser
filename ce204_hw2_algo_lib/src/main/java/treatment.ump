@@ -1,0 +1,48 @@
+namespace treatment;
+class Patient
+{
+  1 -- * Prescription;
+  1 -- * Treatment;
+}
+
+class Doctor
+{
+  * -- * Patient;
+  1 -- * Examination;
+  * -- * Prescription write;
+  * -- * Treatment;
+}
+
+class Examination
+{
+  * -- 1 Patient;
+}
+
+class Diagnosis
+{
+  * -- * Examination;
+  * -- 1 Patient;
+  * make -- * Doctor;
+  * -- * Treatment resultIn;
+   *--*  Prescription resultsIn;
+}
+
+class Prescription
+{
+  1 -- * Therapy;
+}
+
+class Treatment
+{
+  abstract;
+}
+
+class Therapy
+{
+  isA Treatment;
+}
+
+class Surgery
+{
+  isA Treatment;
+}

@@ -1,0 +1,133 @@
+namespace organization;
+class Hospital {
+ String name ;
+key { name }
+  Phone phone;
+  Address address = new Address (cityName, districtName, streetName, buildingName);
+  String cityName; 
+  String districtName; 
+  String streetName; 
+  String buildingName;
+*-- * Person;
+}
+class Person {
+abstract;
+  String givenName; 
+  String middleName; 
+  String familyName; 
+FullName name = new FullName (givenName, middleName, familyName);
+  Gender gender;
+  Phone phone;
+  String title;
+  Date birthDate;
+  Address homeAddress = new Address (cityName, districtName, streetName, buildingName);
+  String cityName; 
+  String districtName; 
+  String streetName; 
+  String buildingName;
+}
+class FullName { 
+String givenName;
+String middleName; 
+String familyName; 
+    }
+class Gender{
+String  male;
+String  female;
+}
+class Phone{
+Integer phoneNumber;
+}
+class Address{
+ 	String cityName;
+    String districtName;
+    String streetName;
+    String buildingName;
+}
+class Patient {
+ String id;
+key { id }
+  FullName name;
+  Gender gender;
+  Date birthDate;
+  isA Person;
+  Integer age ;
+  String[] prescriptions;
+  String[] allergies;
+  String[] specialReqs;  
+  Date accepted;
+  History sickness;
+}
+
+  class History
+  {
+  String sicknesses;
+  }
+
+class Doctor {
+  isA OperationsStaff;
+  String[] specialty;
+  String[] locations;
+}
+
+class Department {
+  * -<@> 1 Hospital;
+  }
+class OperationsStaff
+{
+abstract;
+  isA Staff;
+  *-- * Patient;
+}
+
+class Surgeon
+{
+  isA Doctor;
+}
+
+class Nurse
+{
+  isA OperationsStaff;
+}
+
+class Staff
+{
+abstract;
+  Date joined;
+  String[] education;
+  String[] certification;
+  String[] languages;  
+* -<@> 1 Department;
+    isA Person;
+}
+class AdministrativeStaff
+{
+abstract;
+  isA Staff;
+}
+class FrontDeskStaff
+{
+  isA AdministrativeStaff;
+}
+class Receptionist
+{
+  isA FrontDeskStaff;
+}
+class TechnicalStaff
+{
+abstract;
+isA Staff;
+}
+class Technician
+{
+isA TechnicalStaff;
+}
+class Technologist
+{
+isA TechnicalStaff;
+}
+class SurgicalTechnologist
+{
+isA Technologist; 
+  
+}

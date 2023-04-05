@@ -1,0 +1,83 @@
+namespace wards_and_teams;
+class Ward {
+ String name ;
+key { name }
+  Gender patientsGender;
+  Integer capacity;
+  1 ward -- * Patient patient;
+    * -<@> 1 Hospital;
+}
+
+class Doctor {
+  String[] specialty;
+  String[] locations;
+  
+*--* Patient treats;
+  0..* -<@> 0..1 Team;
+}
+
+class Patient {
+  
+   String id;
+key { id }
+  
+  Gender gender;
+  
+  
+  Integer age ;
+  String[] prescriptions;
+  String[] allergies;
+  String[] specialReqs;  
+  Date accepted;
+  History sickness;
+
+}
+
+
+
+class Team {
+ String name ;
+key { name }
+  
+  
+  1--* Patient;
+1..* -<@> 1 Hospital;
+}
+
+class Hospital {
+ String name ;
+key { name }
+  Phone phone;
+    String cityName; 
+  String districtName; 
+  String streetName; 
+  String buildingName;
+  Address address = new Address (cityName, districtName, streetName, buildingName);
+}
+
+class JuniorDoctor{
+isA Doctor;
+}
+class ConsultantDoctor{
+    isA Doctor;
+  1 -- * Patient ultimateResponsibility;
+1 teamLeader -- 0..1 Team;
+
+}
+class Phone{
+Integer phoneNumber;
+}
+class Address{
+  String cityName;
+  String districtName;
+  String streetName;
+  String buildingName;
+}
+class History
+{
+String sicknesses;
+}
+class Gender{
+  enum Status { male,female }  
+  Status status;
+}
